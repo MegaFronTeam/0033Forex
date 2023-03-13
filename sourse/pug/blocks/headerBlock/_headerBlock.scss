@@ -1,30 +1,213 @@
 // start .headerBlock
 .headerBlock {
-	// --sPT: #{rem()};
-	// --sPB: #{rem()};
+	--sPT: #{rem(26)};
+	--sPB: #{rem(40)};
 	// --sTPB: #{rem()}; 
-	min-height: 100vh;
-	min-height: calc(var(--vh, 1vh) * 100);
-	
-	
-	&__row{
-		// --bs-gutter-x: #{rem()};
-		--bs-gutter-y: var(--bs-gutter-x);
+	// min-height: 100vh;
+	// min-height: calc(var(--vh, 1vh) * 100);
+	@include media-breakpoint-up(lg) {
+		--sPB: #{rem(81)};
+	}
+	&__container {
+		position: relative;
+		.bg {
+			position: absolute;
+			top: 61px;
+			left: -389px;
+			z-index: -1;
+			pointer-events: none;
+		}
+		.img {
+			position: absolute;
+			display: none;
+			z-index: -1;
+			@include media-breakpoint-down(lg) {
+				width: 100%;
+				max-width: rem(256);
+			}
+			@include media-breakpoint-up(sm) {
+				display: block;
+				right: -60px;
+				top: 290px;
+			}
+			@include media-breakpoint-up(md) {
+				right: 90px;
+				top: 290px;
+			}
+			@include media-breakpoint-up(lg) {
+				right: -193px;
+				top: -146px;
+				z-index: 2;
+			}
+			@include media-breakpoint-up(xl) {
+				right: -93px;
+			}
+		}
+	}
+	h1 {
+		margin-bottom: rem(25);
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(34.500);
+		}
+	}
+	&__subtitle {
+		font-size: rem(20);
+		font-weight: 600;
+		color: #000;
+		font-feature-settings: 'pnum' on, 'lnum' on;
+		margin-bottom: rem(21);
+		span {
+			color: $red;
+		}
+	}
+	p {
+		margin-bottom: 0;
+		max-width: rem(442);
+		line-height: 1.3em;
+		margin-bottom: rem(20);
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(38);
+		}
+	}
+	&__btn {
+		max-width: rem(292);
+		margin-bottom: rem(36);
+	}
+	&__timer-wrap {
+		display: flex;
+		flex-direction: column;
+		@include media-breakpoint-up(lg) {
+			flex-direction: row;
+		}
+		p {
+			font-size: rem(12);
+			max-width: rem(250);
+			margin-bottom: 0;
+			line-height: 1.3em;
+			@include media-breakpoint-up(lg) {
+				margin-bottom: 0;
+			}
+		}
+	}
+	&__timer-box{
+		display: flex;
 
-	}
-	.section-title{
-		
-	}
-	&__col{
+		padding-bottom: rem(50);
+		@include media-breakpoint-up(lg){
+			//padding-top: rem(45px);
+			padding-bottom: 0;
+			// width: 100%;
+			margin-right: rem(39);
+			// justify-content: flex-start;
+		}
+		// justify-content: center;
+		span{
+			position: relative;
+			@include media-breakpoint-up(md) {
 
-	}
-	&__item{
+				width: rem(56);
+				height: rem(56);
+				font-size: rem(50);
+			}
+			font-family: $font-family-monospace;
+			font-size: rem(30);
+			width: rem(60);
+			height: rem(60);
+			background-color: $gray-100;
+			border-radius: rem(8);
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
 
-	}
-	&__slide{
-		height: auto;
-	}
+			//txt
+			//font-family: $gotham-pro;
+			color: #000;
+			line-height: 1.01em;
+			text-transform: uppercase;
+			text-align: center;
 
+			//margin
+			// &:first-child{
+			// 	margin-right: rem(28);
+			// }
+			@include media-breakpoint-up(md) {
+
+				margin-right: rem(28);
+			}
+			margin-right: rem(20);
+			&:last-child{
+				margin-right: 0 !important;
+			}
+			&:first-child {
+				@include media-breakpoint-up(md) {
+					margin-right: rem(18);
+				}
+			}
+			//after =>  'дней'
+			&:after{
+				position: absolute;
+				display: block;
+				left: 0;
+				top: 100%;
+				width: 100%;
+
+				font-family: $font-family-sans-serif;
+				text-align: center;
+				//font-family: $gotham-pro;
+				font-size: rem(10); 
+				line-height: 1.3em;
+				color: $body-color;
+				margin-top: rem(8);
+				font-feature-settings: 'pnum' on, 'lnum' on;
+				font-weight: 400;
+				text-transform: lowercase;
+			}
+			&.days:after{
+				content: 'дней';
+			}
+			&.hours:after{
+				content: 'часов';
+			}
+			&.minutes:after{
+				content: 'минут';
+			}
+			&.seconds:after{
+				content: 'секунд';
+			}
+			//before => ':'
+
+			&:before{
+				content: '';
+				position: absolute;
+				left: 100%;
+				@include media-breakpoint-up(md) {
+
+					width: rem(26);
+				}
+				width: rem(20);
+				text-align: center;
+				top: 0;
+				height: 100%;
+
+				//
+				display: flex;
+				text-align: center;
+				justify-content: center;
+				align-items: center;
+
+				// font-size: rem(40);
+				// color: #C4C4C4;
+				background-image: url("data:image/svg+xml,%3Csvg width='6' height='23' viewBox='0 0 6 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='3' cy='3.5' r='3' fill='%23434343'/%3E%3Ccircle cx='3' cy='19.5' r='3' fill='%23434343'/%3E%3C/svg%3E%0A");
+				background-repeat: no-repeat;
+				background-size: 6px 22px;
+				background-position: center;
+			}
+
+		 &:last-child:before, &:first-child:before{
+				content: none;
+			}
+		}
+	}
 	@include media-breakpoint-up(xl) {}
 
 	@include media-breakpoint-up(lg) {}

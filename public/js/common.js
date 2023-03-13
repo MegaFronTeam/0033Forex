@@ -18,9 +18,17 @@ const JSCCommon = {
 			// showClass: "fancybox-throwOutUp",
 			// hideClass: "fancybox-throwOutDown",
 			l10n: {
+				CLOSE: "Закрыть",
 				Escape: "Закрыть",
 				NEXT: "Вперед",
 				PREV: "Назад",
+				MODAL: "Вы можете закрыть это модальное окно с помощью клавиши ESC.",
+				ERROR: "Что-то пошло не так. Пожалуйста, повторите попытку позже",
+				IMAGE_ERROR: "Изображение не найдено",
+				ELEMENT_NOT_FOUND: "HTML-элемент не найден",
+				AJAX_NOT_FOUND: "Ошибка при загрузке AJAX: не найдено",
+				AJAX_FORBIDDEN: "Ошибка при загрузке AJAX: запрещено",
+				IFRAME_ERROR: "Ошибка загрузки iframe",
 			},
 		});
 		document.querySelectorAll(".modal-close-js").forEach(el=>{
@@ -296,6 +304,68 @@ const JSCCommon = {
 	
 		convertImages('.img-svg-js');
   },
+	tikTak(parentQselector){
+		//html elements
+		let parent = document.querySelector(parentQselector);
+		if (!parent) return
+
+		let days = parent.querySelector('.days');
+		let hours = parent.querySelector('.hours');
+		let minutes = parent.querySelector('.minutes');
+		let seconds = parent.querySelector('.seconds');
+
+
+
+		//date elements
+		let now = new Date();
+
+		// d === days.innerHtml + now.getDate... others the same way
+		let d = getTime(days, now.getDate());
+		let h = getTime(hours, now.getHours());
+		let m = getTime(minutes, now.getMinutes());
+		let s = getTime(seconds, now.getSeconds());
+
+		//let targetDate = new Date(now.getFullYear(), now.getMonth(), d, h, m, s);
+		//force date
+		let targetDate = new Date(now.getFullYear(), now.getMonth(),now.getDate(), now.getHours() + 11 );
+
+
+		//interval
+		tikTakReadOut(parent, targetDate, ThisReadOutID, days, hours, minutes, seconds);
+		var ThisReadOutID = window.setInterval(tikTakReadOut.bind(null,parent, targetDate, ThisReadOutID, days, hours, minutes, seconds), 1000);
+		function tikTakReadOut(parent,targetDate, ReadOutID, days, hours, minutes, seconds){
+			let now = new Date();
+			// let timeLeft = (targetDate - now) / 1000;
+			let timeLeft = (targetDate - now) / 1000;
+	
+			if (timeLeft < 1) {
+				window.clearInterval(ReadOutID);
+				//to do something after timer ends
+				$(parent).fadeOut();
+			}
+	
+			days.innerHTML = Math.floor(timeLeft / 60 / 60 / 24);
+			timeLeft = ((timeLeft / 60 / 60 / 24) - Math.floor(timeLeft / 60 / 60 / 24)) * 60 * 60 * 24;
+	
+			hours.innerHTML = Math.floor(timeLeft / 60 / 60);
+			timeLeft = ((timeLeft / 60 / 60) - Math.floor(timeLeft / 60 / 60)) * 60 * 60;
+	
+			minutes.innerHTML = Math.floor((timeLeft / 60));
+			timeLeft = ((timeLeft / 60) - Math.floor((timeLeft / 60))) * 60;
+	
+			seconds.innerHTML = Math.floor(timeLeft);
+		}
+		function getTime(htmlEl, currentTimeItem) {
+			let timeItem = Number(htmlEl.innerHTML);
+			if (timeItem) {
+				timeItem += currentTimeItem;
+			}
+			else {
+				timeItem = currentTimeItem;
+			}
+			return timeItem
+		}
+	},
 };
 const $ = jQuery;
 
@@ -307,6 +377,7 @@ function eventHandler() {
 	// JSCCommon.sendForm();
 	JSCCommon.heightwindow();
 	JSCCommon.makeDDGroup();
+	JSCCommon.tikTak('.timer-box-js');
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
 	
