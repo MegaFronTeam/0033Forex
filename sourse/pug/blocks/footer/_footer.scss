@@ -2,7 +2,7 @@
 	position: relative;
 	// background-color: #EEEFF2;		
 	// margin-top: rem(50);
-	padding: 0 0 rem(30);
+	padding: 0;
 	color: $black;
 	@include media-breakpoint-up(lg) {
 		padding: 0 0 rem(62);
@@ -30,7 +30,7 @@
 		}
 	}
 	&__wrap {
-		border-radius: 0 0 27px 27px;
+		border-radius: 0;
 		background-image: linear-gradient(257.99deg, #F9F9F9 7.22%, #EEEEEE 36.93%, #F9F9F9 82.28%);
 		padding: rem(27) rem(20);
 		position: relative;
