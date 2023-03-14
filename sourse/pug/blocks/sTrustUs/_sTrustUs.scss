@@ -24,12 +24,17 @@
 		}
 	}
 	&__wrap {
-		border-radius: 47px;
+		border-radius: 27px;
 		background-image: linear-gradient(257.99deg, #F9F9F9 7.22%, #EEEEEE 36.93%, #F9F9F9 82.28%);
-		padding: rem(50) rem(20);
+		padding: rem(27) rem(20);
 		position: relative;
 		overflow: hidden;
 		z-index: 1;
+		margin: 0 rem(-10);
+		@include media-breakpoint-up(md) {
+			margin: 0;
+			border-radius: 47px;
+		}
 		.img {
 			position: absolute;
 			right: -213px;
