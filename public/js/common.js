@@ -459,7 +459,7 @@ function eventHandler() {
 		// slidesPerView: 5,
 		slidesPerView: 1,
 		loop: true,
-		autoHeight: true,
+		// autoHeight: true,
 		pagination: {
 			el: '.swiper-pagination',
 			clickable: true,
