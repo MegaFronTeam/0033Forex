@@ -60,6 +60,9 @@
 			border-radius: 23px;
 			overflow: hidden;
 			margin-bottom: rem(20);
+			&:hover {
+				box-shadow: 1px 1px 17px 1px #353535c9;
+			}
 			@include media-breakpoint-up(md) {
 				margin-bottom: rem(32);
 			}
@@ -68,9 +71,25 @@
 			}
 		}
 		&__subtext {
-			font-size: rem(12);
+			font-size: rem(15);
 			color: #000;
 			line-height: 1.3em;
+		}
+		&__play-icon {
+			position: absolute;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: rem(80);
+			height: rem(80);
+			border-radius: 50%;
+			@include a-cent;
+			background-color: #0DAC91;
+			color: #FAF7F8;
+			.icon {
+				font-size: rem(39);
+				margin-left: rem(7);
+			}
 		}
 	}
 	.dd-group {

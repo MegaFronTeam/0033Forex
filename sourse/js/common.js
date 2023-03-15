@@ -379,6 +379,7 @@ function eventHandler() {
 	JSCCommon.makeDDGroup();
 	JSCCommon.tikTak('.timer-box-js');
 	JSCCommon.tikTak('.timer-box-js2');
+	JSCCommon.tikTak('.timer-box-js3');
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
 	

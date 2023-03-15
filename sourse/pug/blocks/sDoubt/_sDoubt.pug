@@ -11,13 +11,13 @@ mixin sDoubt(data)
 					.swiper-wrapper
 						mixin item(x)
 							.swiper-slide
-								+e.slide-wrap(href=`img/sDoubt-img-1.png`, data-fancybox=`gallery-${x}`)
+								+e.slide-wrap(href=`img/sDoubt-img-${x}.jpg`, data-fancybox=`gallery-${x}`)
 									.img-wrap-center
-										+img('img/sDoubt-img-1.png')
+										+img(`img/sDoubt-img-${x}.jpg`)
 									+e.zoom: +icon('zoom')
-						- for (var x = 1; x < 6; x++)
+						- for (var x = 1; x < 12; x++)
 							+item(x)
 					.swiper-pagination
 				+arrow()
-			+e.btn.btn.btn-primary.btn-base(href='#') Кликните сюда, чтобы получить бесплатный доступ
+			+e.btn.btn.btn-primary.btn-base(href="modal-call").link-modal-js  Кликните сюда, чтобы получить бесплатный доступ
 	// end sDoubt
