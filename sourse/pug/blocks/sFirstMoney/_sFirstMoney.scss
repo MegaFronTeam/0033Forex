@@ -30,8 +30,8 @@
 		position: relative;
 		text-align: center;
 		.img {
-			width: 100%;
-			max-width: rem(613);
+			// width: 100%;
+			// max-width: rem(613);
 			margin-top: rem(20);
 			@include media-breakpoint-up(xl) {
 				position: absolute;
@@ -39,6 +39,19 @@
 				right: rem(18);
 				width: auto;
 				margin-top: 0;
+			}
+		}
+	}
+	&__bg-wrap {
+		@include media-breakpoint-down(xl) {
+			width: 100%;
+			max-width: 400px;
+			margin-left: auto;
+			margin-right: auto;
+			position: relative;
+			img {
+				max-width: calc(100% + 200px);
+				margin-left: -200px;
 			}
 		}
 	}

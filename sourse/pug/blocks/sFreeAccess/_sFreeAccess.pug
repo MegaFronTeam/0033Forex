@@ -9,7 +9,7 @@ mixin sFreeAccess(data)
 					.swiper-wrapper
 						mixin item(x)
 							.swiper-slide
-								+e.slide-wrap(href=`img/sFreeAccess-img-${x}.jpg`, data-fancybox=`img-${x}`)
+								+e.slide-wrap(href=`img/sFreeAccess-img-${x}.jpg`, data-fancybox=`img-1`)
 									+img(`img/sFreeAccess-img-${x}.jpg`)
 						- for (var x = 1; x < 6; x++)
 							+item(x)

@@ -16,7 +16,16 @@ mixin headerBlock()
 							span.hours 20
 							span.minutes 20 
 							span.seconds 20
-						p Успейте зарегистрироваться до&nbsp;истечения таймера, и&nbsp;получите БЕСПЛАТНЫЙ билет на&nbsp;ближайший онлайн мастер-класс Артема Дудкевича
+						p Успейте до&nbsp;истечения таймера и&nbsp;получите БЕСПЛАТНЫЙ билет на&nbsp;ближайший вебинар Артема Дудкевича
 				.col-lg-5
-					img(src="img/header-img.png", alt="").img
+					+e.img
+						+img('img/header-img-sm.png')
+						+e.person-text
+							p Артем Дудкевич
+							span Автор курса
+					+e.person
+						img(src="img/header-img.png", alt="")
+						+e.person-text
+							p Артем Дудкевич
+							span Автор курса
 	// end headerBlock

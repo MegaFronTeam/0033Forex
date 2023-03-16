@@ -56,7 +56,11 @@
 	a {
 		color: $black;
 		font-size: 15px;
-		text-decoration: underline;
+		text-decoration: none;
+		border-bottom: 1px solid #000 !important;
+		&:hover {
+			border-bottom-color: transparent !important;
+		}
 	}
 	// background-image: url(..);
 
@@ -100,6 +104,8 @@
 			}
 			a{
 				// border-bottom: 1px solid;
+				font-size: rem(20);
+				font-weight: 600;
 				line-height: 1;
 				&:hover{
 					// border-color: transparent;

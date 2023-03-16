@@ -13,9 +13,9 @@
 	position: relative;
 	width: rem(1050);
 	// min-height: 100%; 
-	padding: 20px 20px 0 20px;
+	padding: 20px;
 	@include media-breakpoint-up(md) {
-		padding: 30px 40px 0 40px;
+		padding: 30px 40px 20px 40px;
 	}
 	.modal-content {
 		// max-width: 485px;
@@ -55,9 +55,9 @@
 				-moz-border-radius-bottomleft: 20px;
 				border-top-left-radius: 20px;
 				border-bottom-left-radius: 20px;
-				background-color: rgb(43,194,83);
-				background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(43,194,83)), color-stop(1, rgb(84,240,84)) );
-				background-image: -moz-linear-gradient( center bottom, rgb(43,194,83) 37%, rgb(84,240,84) 69% );
+				background-color: red;
+				// background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0, rgb(43,194,83)), color-stop(1, rgb(84,240,84)) );
+				// background-image: -moz-linear-gradient( center bottom, rgb(43,194,83) 37%, rgb(84,240,84) 69% );
 				-webkit-box-shadow: inset 0 2px 9px rgba(255,255,255,0.3), inset 0 -2px 6px rgba(0,0,0,0.4);
 				-moz-box-shadow: inset 0 2px 9px rgba(255,255,255,0.3), inset 0 -2px 6px rgba(0,0,0,0.4);
 				box-shadow: inset 0 2px 9px rgba(255,255,255,0.3), inset 0 -2px 6px rgba(0,0,0,0.4);
@@ -111,6 +111,8 @@
 		align-items: center;
 	}
 	&__img-wrap {
+		position: relative;
+		align-self: flex-end;
 		width: 100%;
 		max-width: rem(400);
 		display: none;
@@ -118,7 +120,14 @@
 			display: block;
 		}
 		img {
+			position: absolute;
+			left: -20px;
+			bottom: -20px;
 			width: 100%;
+			@include media-breakpoint-up(md) {
+				left: -40px;
+				bottom: -20px;
+			}
 		}
 	}
 	&__form {
@@ -127,9 +136,12 @@
 		.ld_content {
 			margin-bottom: rem(20);
 			iframe {
-				height: 285px !important;
+				// height: 285px !important;
 			}
 		}
+	}
+	&__footer-text {
+		font-size: rem(12);
 	}
 	.ps {
 		padding-top: rem(20);

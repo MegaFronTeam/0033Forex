@@ -1,8 +1,11 @@
 // start .sTrustUs
 .sTrustUs {
-	--sPT: #{rem(30)};
+	--sPT: #{rem(0)};
 	--sPB: #{rem(30)};
 	--sTPB: #{rem(40)};
+	@include media-breakpoint-up(sm) {
+		--sPT: #{rem(30)};
+	}
 	@include media-breakpoint-up(lg) {
 		--sTPB: #{rem(90)};
 	}

@@ -6,7 +6,7 @@ mixin footer()
 					.before
 						+logo('#DA4053',"146", "126")
 					.row
-						.col-md.col-lg-4
+						.col-md.col-lg-5
 							.footer__left-col
 								.footer__txt.footer__txt--h6
 									p
@@ -14,13 +14,13 @@ mixin footer()
 											function InfoDVDCurrentYear(year) {
 												var cur = new Date();
 												if (cur.getFullYear() != year)
-													document.write('© ' + year + '&mdash;' + cur.getFullYear() + '<br>');
+													document.write('© ' + year + '&mdash;' + cur.getFullYear() + " ");
 												else document.write(year);
 											}
 											InfoDVDCurrentYear('2008 '); 
-										| Издательство Инфо-ДВД<br>
-										| Проект «Инфоклуб»<br>
-										| ОГРНИП 316183200118945
+										| Издательство #[a(href='//www.info-dvd.ru/?utm_source=footer_link'  target='_blank') Инфо-ДВД] <br>
+										| Проект #[a(href='//www.infoclub.info/'  target='_blank') «Инфоклуб»]<br>
+										| #[script(src='//info-dvd.ru/codes/js/legal.utf8.js')]
 								.footer__txt
 									p
 										a.tdu(href='//info-dvd.ru/professional/', target='_blank', title='экспертам-авторам (инфо-продюсирование)')
