@@ -118,6 +118,7 @@
 		display: none;
 		@include media-breakpoint-up(md) {
 			display: block;
+			min-height: 580px;
 		}
 		img {
 			position: absolute;
