@@ -9,8 +9,8 @@ mixin sFreeAccess(data)
 					.swiper-wrapper
 						mixin item(x)
 							.swiper-slide
-								+e.slide-wrap(href=`img/sFreeAccess-img-${x}.jpg`, data-fancybox=`img-1`)
-									+img(`img/sFreeAccess-img-${x}.jpg`)
+								+e.slide-wrap(href=`img/sFreeAccess-img-lg-${x}.jpg`, data-fancybox=`img-1`)
+									+pic(`sFreeAccess-img-${x}`)
 						- for (var x = 1; x < 6; x++)
 							+item(x)
 					.swiper-pagination

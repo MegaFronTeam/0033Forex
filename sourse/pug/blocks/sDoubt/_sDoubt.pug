@@ -11,9 +11,9 @@ mixin sDoubt(data)
 					.swiper-wrapper
 						mixin item(x)
 							.swiper-slide
-								+e.slide-wrap(href=`img/sDoubt-img-${x}.jpg`, data-fancybox=`gallery-1`)
+								+e.slide-wrap(href=`img/sDoubt-img-lg-${x}.jpg`, data-fancybox=`gallery-1`)
 									.img-wrap-center
-										+img(`img/sDoubt-img-${x}.jpg`)
+										+pic(`sDoubt-img-${x}.jpg`)
 									+e.zoom: +icon('zoom')
 						- for (var x = 1; x < 12; x++)
 							+item(x)
